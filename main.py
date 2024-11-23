@@ -31,18 +31,15 @@ def register_user():
     is_checked = ckbox.get()  # Ambil status checkbox (1 jika dicentang, 0 jika tidak)
 
     if not is_checked:  # Jika checkbox belum dicentang
-        status_label.configure(
-            text="""Tolong setujui kebijakan 
-privasi!"""
-        )
+        status_label.configure(text="""Please agree to privacy policy!""")
         shake_widget(ckbox)  # Efek getar pada checkbox
         return
 
     if username and password:  # Jika semua kolom diisi
         user_save_data(username, password)
-        status_label.configure(text="Data berhasil disimpan!")
+        status_label.configure(text="Login Success!!")
     else:
-        status_label.configure(text="Silakan isi semua kolom.")
+        status_label.configure(text="Please fill all column.")
 
 
 # Konfigurasi awal
